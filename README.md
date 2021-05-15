@@ -1,6 +1,6 @@
 # RestfulAPI
- Create a RESTful API
-viết 1 RESTful API sử dụng flask framework bao gồm:
+Create a RESTful API
+#viết 1 RESTful API sử dụng flask framework bao gồm:
 1/ nhập vào thông tin sinh viên bao gồm: name, email, age, gender, class, school sử dụng POST method và lưu vào file JSON
 2/ tìm kiếm sinh viên theo email (load data từ file .JSON và tìm kiếm). Sử dụng method GET theo url sau: http://localhost:5000/search?email=mail_sinh_vien
 dữ liệu trả về là 1 JSON chứa tất cả thông tin của sinh viên đó
