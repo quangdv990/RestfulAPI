@@ -18,3 +18,7 @@ Keyword cần nghiên cứu:
 3/ JSON file là gì
 4/ Quản lý version sử dụng git
 5/ Cách sử dụng Postman để test thử chương trình
+
+
+
+1/ Xuất ra 1 danh sách các sinh viên có name trùng nhau (list phải có name trùng nhau)
