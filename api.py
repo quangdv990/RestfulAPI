@@ -56,8 +56,15 @@ def get_query_string():
             if j == "email" and v == email:
                 return student_infor[i], 200
 
-
-
+@app.route('/duplicatevalue', methods=['GET'])
+def get_duplicate_value():
+    d = {}
+    tensv = request.args.get('tensv')
+    for i in student_infor:
+        for j in student_infor[i]:
+            v = student_infor[i][j]
+        if d
+       
 class Sinhvien(Resource):
     def get(self, student_id):
         return student_infor[student_id]
