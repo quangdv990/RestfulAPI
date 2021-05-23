@@ -9,7 +9,7 @@ api = Api(app)
 
 student_infor = {
     '1': {'tensv': 'tensv1', 'age': 30, 'gender':'Male', 'email':'tensv1@gmail.com', 'class':'Mathematics', 'school': 'PCT'},
-    '2': {'tensv': 'tensv2', 'age': 31, 'gender':'Male', 'email':'tensv2@gmail.com','class':'English', 'school': 'PCT'},
+    '2': {'tensv': 'tensv1', 'age': 31, 'gender':'Male', 'email':'tensv2@gmail.com','class':'English', 'school': 'PCT'},
     '3': {'tensv': 'tensv3', 'age': 35, 'gender':'Female','email':'tensv3@gmail.com', 'class':'Music', 'school': 'PCT'}
 }
 parse = reqparse.RequestParser()
@@ -58,17 +58,11 @@ def get_query_string():
 
 @app.route('/duplicatevalue', methods=['GET'])
 def get_duplicate_value():
-    reverse_dic = {}
+    d = {}
     for i in student_infor:
         for k, v in student_infor.iteritems():
-            reverse_dic[v] = reverse_dic.get(v, [])
-            reverse_dic[v].append(k)
-    # d = {}
-    # tensv = request.args.get('tensv')
-    # for i in student_infor:
-    #     for j in student_infor[i]:
-    #         v = student_infor[i][j]
-    #     if d
+            d[v] = d.get(v, [])
+            d[v].append(k)
        
 class Sinhvien(Resource):
     def get(self, student_id):
