@@ -59,7 +59,7 @@ def get_query_string():
 @app.route('/duplicatevalue', methods=['GET'])
 def get_duplicate_value():
     d = {}
-    for i in student_infor:
+    for i, j in student_infor:
         for k, v in student_infor.iteritems():
             d[v] = d.get(v, [])
             d[v].append(k)
