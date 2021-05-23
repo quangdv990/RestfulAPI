@@ -58,12 +58,17 @@ def get_query_string():
 
 @app.route('/duplicatevalue', methods=['GET'])
 def get_duplicate_value():
-    d = {}
-    tensv = request.args.get('tensv')
+    reverse_dic = {}
     for i in student_infor:
-        for j in student_infor[i]:
-            v = student_infor[i][j]
-        if d
+        for k, v in student_infor.iteritems():
+            reverse_dic[v] = reverse_dic.get(v, [])
+            reverse_dic[v].append(k)
+    # d = {}
+    # tensv = request.args.get('tensv')
+    # for i in student_infor:
+    #     for j in student_infor[i]:
+    #         v = student_infor[i][j]
+    #     if d
        
 class Sinhvien(Resource):
     def get(self, student_id):
