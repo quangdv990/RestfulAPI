@@ -56,14 +56,16 @@ def get_query_string():
             if j == "email" and v == email:
                 return student_infor[i], 200
 
-@app.route('/duplicatevalue', methods=['GET'])
-def get_duplicate_value():
-    d = {}
-    for i, j in student_infor:
-        for k, v in student_infor.iteritems():
-            d[v] = d.get(v, [])
-            d[v].append(k)
-       
+@app.route('/datatensv', methods=['GET'])
+def get_query_string():
+    r = {}
+    tensv = request.args.get("tensv")
+    for i in student_infor: # 1, 2, 3
+        # student_infor[i] = {'tensv': 'tensv1', 'age': 30, 'gender':'Male', 'email':'tensv1@gmail.com', 'class':'Mathematics', 'school': 'PCT'}
+        for j in student_infor[i]:
+            v = student_infor[i][j]
+            if j == "tensv" and v == tensv:
+                return student_infor[i], 200  
 class Sinhvien(Resource):
     def get(self, student_id):
         return student_infor[student_id]
