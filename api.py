@@ -2,6 +2,7 @@ from typing import get_args
 from flask import Flask, jsonify, request
 from flask_restful import Resource, Api, reqparse
 import json
+import collections
 
 
 app = Flask(__name__)
@@ -10,7 +11,11 @@ api = Api(app)
 student_infor = {
     '1': {'tensv': 'tensv1', 'age': 30, 'gender':'Male', 'email':'tensv1@gmail.com', 'class':'Mathematics', 'school': 'PCT'},
     '2': {'tensv': 'tensv1', 'age': 31, 'gender':'Male', 'email':'tensv2@gmail.com','class':'English', 'school': 'PCT'},
+<<<<<<< Updated upstream
     '3': {'tensv': 'tensv3', 'age': 35, 'gender':'Female','email':'tensv3@gmail.com', 'class':'Music', 'school': 'PCT'}
+=======
+    '3': {'tensv': 'tensv1', 'age': 35, 'gender':'Female','email':'tensv3@gmail.com', 'class':'Music', 'school': 'PCT'}
+>>>>>>> Stashed changes
 }
 parse = reqparse.RequestParser()
 
@@ -55,6 +60,7 @@ def get_query_string():
             v = student_infor[i][j]
             if j == "email" and v == email:
                 return student_infor[i], 200
+<<<<<<< Updated upstream
 
 @app.route('/datatensv', methods=['GET'])
 def get_query_string():
@@ -66,9 +72,18 @@ def get_query_string():
             v = student_infor[i][j]
             if j == "tensv" and v == tensv:
                 return student_infor[i], 200  
+=======
+# @app.route('/duplicatevalue')
+# def get_duplicatevalue():
+#     for i in student_infor:
+#         for j in student_infor['tensv']:
+#             v = student_infor['tensv']
+#             if j['tensv']
+#                 return student_infor[i], 200
+>>>>>>> Stashed changes
 class Sinhvien(Resource):
     def get(self, student_id):
-        return student_infor[student_id]
+         return student_infor[student_id]
 
 api.add_resource(Sinhvien,'/student_infor')
 
